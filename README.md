@@ -1,4 +1,4 @@
-#  xeek_gwtf
+# xeek_gwtf
 Programming contest for Xeek(Shell)
 
 - https://xeek.ai/challenges/go-with-the-flow/overview
