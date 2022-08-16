@@ -206,12 +206,12 @@ func (t *took) startUp() {
 	t.seed = SEED
 	randit(1, t)
 	randit(1, t)
-/*
+	/*
 	   	   t.tracking = make ([]int16, TURNS * AGENTSPT * TURNS * 3)
 	           for x := 0;x < len(t.tracking);x++ {
 	                   t.tracking[x] = -1
 	           }
-*/
+	*/
 }
 
 func (t took) disp() string {
@@ -259,11 +259,11 @@ func (a *agent) startUp() {
 	a.dead = false
 }
 func (a *agent) iter(tk *took, t int) {
-/*
+	/*
 	   tk.tracking[to1t(a.aid, t, 0)] = int16(a.x)
 	   tk.tracking[to1t(a.aid, t, 1)] = int16(a.y)
 	   tk.tracking[to1t(a.aid, t, 2)] = int16(a.z)
-*/
+	*/
 
 	if a.dead {
 		return
@@ -392,24 +392,24 @@ func (ag *agent) move(tk *took) {
 					continue
 				}
 				p := pre
-FAC := 20
-_ = FAC
-/*
+				FAC := 20
+				_ = FAC
+				/*
 
-                                if ag.x < 150 && dx == 1 {
-                                        p += (150 - ag.x) / FAC
-                                }
-                                if ag.x > 150 && dx == -1 {
-                                        p += (ag.x - 150) / FAC
-                                }
-                                 if ag.y < 150 && dy == 1 {
-                                        p += (150 - ag.y) / FAC
-                                }
-                                if ag.y > 150 && dy == -1 {
-                                        p += (ag.y - 150) / FAC
-                                }
-*/
-                               
+				   if ag.x < 150 && dx == 1 {
+				           p += (150 - ag.x) / FAC
+				   }
+				   if ag.x > 150 && dx == -1 {
+				           p += (ag.x - 150) / FAC
+				   }
+				    if ag.y < 150 && dy == 1 {
+				           p += (150 - ag.y) / FAC
+				   }
+				   if ag.y > 150 && dy == -1 {
+				           p += (ag.y - 150) / FAC
+				   }
+				*/
+
 				p +=
 					int(tk.envar[to3(tx, ty, tz)])
 				if p >= maxn {
@@ -441,7 +441,7 @@ func (a *agent) rMove(tk *took) {
 					a.exMove(dx, dy, dz, tk)
 					return
 				}
-                                break
+				break
 			}
 		}
 	}
@@ -587,15 +587,15 @@ func (tk *took) exe() {
 			for {
 				//		x = randit(CIRC, tk)
 				//               y = randit(CIRC, tk)
-				x =  XSIZE / 2 - CIRC + randit(2 * CIRC, tk)
-					y = XSIZE / 2 - CIRC + randit(2 * CIRC, tk)
-x = 150
-y = 150
+				x = XSIZE/2 - CIRC + randit(2*CIRC, tk)
+				y = XSIZE/2 - CIRC + randit(2*CIRC, tk)
+				x = 150
+				y = 150
 				x = randit(XSIZE, tk)
 				y = randit(YSIZE, tk)
 				if randit(100, tk) < tk.rangen {
 					z = randit(ZSIZE, tk)
-//										z = ZSIZE - 1 - randit(10, tk)
+					//										z = ZSIZE - 1 - randit(10, tk)
 				} else {
 					z = ZSIZE - 1
 				}
@@ -688,7 +688,7 @@ func gotook(a int, ch chan rs) {
 	t.exe()
 	if a == 6 {
 		t.prn()
-//                t.trackp()
+		//                t.trackp()
 	}
 	sc, mad := 0.0, 0.0
 	if hasAcc(a) {
